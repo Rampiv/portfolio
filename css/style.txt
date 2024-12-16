@@ -1,26 +1,8 @@
-@font-face {
-    font-family: "OpenSans";
-    src: local("OpenSans-Regular"), url("../fonts/OpenSans-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "OpenSans";
-    src: local("OpenSans-SemiBold"), url("../fonts/OpenSans-SemiBold.ttf") format("truetype");
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "OpenSans";
-    src: local("OpenSans-Bold"), url("../fonts/OpenSans-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
+@mixin flexible () {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 html {
     box-sizing: border-box;
@@ -61,7 +43,7 @@ body {
 
 .container {
     max-width: 1920px;
-    padding: 0 15%;
+    padding: 0 20px;
     margin: 0 auto;
 }
 

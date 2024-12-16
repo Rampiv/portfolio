@@ -1,10 +1,12 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
-
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+import eslintConfigPrettier from "eslint-config-prettier/recommended";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   eslintPluginPrettierRecommended,
+  eslintConfigPrettier,
   {
     languageOptions: {
       globals: {
@@ -22,5 +24,6 @@ export default [
       "prettier/prettier": "error",
       "no-useless-escape": "off"
     }
-  }
+  },
+
 ];

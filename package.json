@@ -1,5 +1,5 @@
 {
-  "name": "my-webpack-project",
+  "name": "my-portfolio-project",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,9 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "My webpack project",
+  "description": "My portfolio project",
   "dependencies": {
+    "gsap": "^3.12.5",
     "navigo": "^8.11.1",
     "redom": "^4.1.5"
   },
@@ -39,7 +40,6 @@
     "prettier": "^3.4.2",
     "sass": "^1.83.0",
     "sass-loader": "^16.0.3",
-    "style-loader": "^4.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4",

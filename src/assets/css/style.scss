@@ -1,0 +1,133 @@
+@mixin flexible() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: "OpenSans", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Global */
+.list-reset {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+}
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.btn-reset {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.text-reset {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --black: #000;
+    --white: #fff;
+    --h1: 35px;
+    --h2: 25px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: var(--h1);
+}
+h2 {
+    font-weight: 700;
+    font-size: var(--h2);
+}
+
+.header__container {
+    @include flexible();
+    padding: 20px 60px;
+    background-color: var(--black);
+    color: var(--white);
+    justify-content: space-between;
+    opacity: 0;
+    height: 97px;
+    border-radius: 0 0 7px 7px;
+    box-shadow: 0px 5px 10px var(--black);
+    .header__h1 {
+        opacity: 0;
+    }
+    .header__nav {
+        @include flexible();
+        gap: 30px;
+        font-size: 20px;
+        .header__item {
+            opacity: 0;
+        }
+    }
+}
+
+.about {
+    @include flexible();
+    padding: 120px 60px;
+    .about__me {
+        max-width: 50%;
+    }
+    .about__me-performance {
+        @include flexible();
+        flex-direction: column;
+        .about__h2 {
+            @include flexible();
+            flex-direction: column;
+            font-size: 50px;
+        }
+    }
+}
+
+// loader
+.loader {
+    @include flexible();
+    height: 97px;
+    width: 200px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -48px; /* Negative half of height. */
+    margin-left: -100px; /* Negative half of width. */
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 7px;
+    box-shadow: 0 0 10px var(--black);
+    z-index: 10;
+    .loader__h2 {
+        font-weight: 700;
+        font-size: 35px;
+    }
+}

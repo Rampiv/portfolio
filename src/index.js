@@ -1,6 +1,7 @@
-import "./assets/css/style.sass"
-import "./assets/css/normalize.css"
+import "./assets/css/style.scss"
 
-import { createHeader } from "./view.js";
+import { winLoader, createHeader, main  } from "./view.js";
+import { loader } from './animation.js'
 
-document.querySelector("body").append(createHeader());
+document.querySelector("body").append(winLoader(), createHeader(), main());
+loader()

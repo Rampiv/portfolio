@@ -1,22 +1,19 @@
-import { el } from "redom";
+import { el, svg } from "redom";
 
 export function createHeader() {
-  return el(
-    "header.header",
+  return el("header.header",
     el("div.container",
       el("div.header__container", [
-        el("div.header__logo", el("h1.text-reset.logo__h1", "Rampiv")),
-        el("ul.header__nav", [
-          el("li.list-reset.header__item",
-            el("a.header__link", { href: "#about" }, "Обо&nbsp;мне")
+        el("div.header__logo", el("h1.text-reset.header__h1", "Rampiv")),
+        el("ul.list-reset.header__nav", [
+          el("li.list-reset.header__item.header__item-about",
+            el("a.header__link", { href: "#about" }, "Обо мне")
           ),
-          el("li.list-reset.header__item",
-            el("a.header__link",
-              { href: "#projects" },
-              "Мои&nbsp;работы"
+          el("li.list-reset.header__item.header__item-projects",
+            el("a.header__link", { href: "#projects" }, "Мои работы"
             )
           ),
-          el("li.list-reset.header__item",
+          el("li.list-reset.header__item.header__item-contacts",
             el("a.header__link", { href: "#contacts" }, "Контакты")
           )
         ])
@@ -25,27 +22,33 @@ export function createHeader() {
   );
 }
 
-// <main class="main">
-//     <div class="container">
-//         <div class="main__section" id="mainSection">
-//             <div class="main__text-container flex">
-//                 <h1 class="main__h1 text-reset">Это мое небольшое<br>портфолио</h1>
-//                 <div class="main__text-block box flex">
-//                     <p class="main__text main__text_margin text-reset">Вы можете наслаждаться минимализмом, а можете
-//                         начать со вкладки "Обо мне".</p>
-//                     <p class="main__text main__text_fontweight text-reset">Во всяком случае, спасибо, что зашли
-//                         сюда.</p>
-//                         <img src="./img/red-heart-svgrepo-com.svg" class="main__text-img heart">
-//                 </div>
-//                 <div class="main__interactive-block flex">
-//                     <div class="main__interactive-image">
+export function winLoader() {
+  return el("div.loader", el("h2.text-reset.loader__h2", "Rampiv"));
+}
 
-//                     </div>
-//                     <h3 class="text-reset main__interactive-text">
-//                         Нажмите на конверт, которая поможет вам принять решение
-//                     </h3>
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-// </main>
+export function main() {
+  return el('main.main',
+    el('div.container',
+      el('section.about#about',
+        [
+          el('div.about__me.about__me-performance',
+            [
+              el('h2.text-reset.about__h2', 'Frondend',
+                el('span', 'разработчик')
+              ),
+              el('div.about__img')
+            ]
+          ),
+          el('div.about__me.about__me-skills',
+            [
+              el('span', 'я'),
+              el('span', 'я'),
+              el('span', 'я'),
+              el('span', 'я')
+            ]
+          )
+        ]
+      )
+    )
+  )
+}

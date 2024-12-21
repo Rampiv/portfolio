@@ -1,0 +1,53 @@
+@use "mixin" as *;
+@use "variables" as *;
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: "OpenSans", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    overflow: hidden;
+}
+
+h1 {
+    @include textReset();
+    font-weight: 700;
+    font-size: $size-h1;
+}
+h2 {
+    @include textReset();
+    font-weight: 700;
+    font-size: $size-h2;
+}
+
+/* Global */
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.btn-reset {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}

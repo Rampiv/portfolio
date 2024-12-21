@@ -1,4 +1,4 @@
-import "./assets/css/style.scss"
+import "./assets/style/style.scss"
 
 import { winLoader, createHeader, main  } from "./view.js";
 import { loader } from './animation.js'

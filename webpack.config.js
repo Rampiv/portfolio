@@ -1,5 +1,3 @@
-// Generated using webpack-cli https://github.com/webpack/webpack-cli
-
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -23,11 +21,7 @@ const config = {
     new HtmlWebpackPlugin({
       template: "index.html"
     }),
-
     new MiniCssExtractPlugin()
-
-    // Add your plugins here
-    // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
   module: {
     rules: [
@@ -43,11 +37,11 @@ const config = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [stylesHandler,  "css-loader",  "postcss-loader", "sass-loader"]
+        use: [stylesHandler, "css-loader", "postcss-loader", "sass-loader"]
       },
       {
-        test: /\.(eot|ttf|woff|woff2|png|jpg|gif)$/i,
-        type: "asset"
+        test: /\.(png|jpg|webp)$/i,
+        type: "asset/resource"
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
@@ -55,9 +49,6 @@ const config = {
         use: ["babel-loader", "@svgr/webpack", "url-loader"],
         type: "asset/resource"
       }
-
-      // Add your rules for custom modules here
-      // Learn more about loaders from https://webpack.js.org/loaders/
     ]
   }
 };

@@ -1,0 +1,38 @@
+@use "variables" as *;
+@use "mixin" as *;
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  &__img {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+  }
+  &__skills{
+    padding: 30px;
+    @include flexible();
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 30px;
+    &-title{
+      @include flexible();
+      flex-direction: column;
+      .about__skills-h2 {
+        font-weight: 700;
+        font-size: $size-5;
+      }
+      .about__skills-span{
+        font-weight: 600;
+        font-size: $size-4;
+      }
+    }
+    &-description{
+      @include flexible();
+      flex-direction: column;
+      font-size: $size-1;
+    }
+  }
+}

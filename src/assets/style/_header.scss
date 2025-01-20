@@ -1,0 +1,29 @@
+@use "variables" as *;
+@use "mixin" as *;
+.header {
+  @include flexible();
+  padding: 20px 60px;
+  background-color: $black;
+  color: $white;
+  justify-content: space-between;
+  opacity: 0;
+  min-height: 97px;
+  border-radius: 0 0 7px 7px;
+  box-shadow: 0px 5px 10px $black;
+  &__link-name {
+    opacity: 0;
+    @include textReset();
+    font-weight: 700;
+    font-size: 35px;
+    cursor: pointer;
+  }
+  &__nav {
+    @include listReset();
+    @include flexible();
+    gap: 30px;
+    font-size: $size-1;
+    &-item {
+      opacity: 0;
+    }
+  }
+}

@@ -2,52 +2,64 @@
 @use "variables" as *;
 
 html {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 *,
 *::after,
 *::before {
-    box-sizing: inherit;
+  box-sizing: inherit;
+  user-select: none;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 body {
-    font-family: "OpenSans", sans-serif;
-    font-weight: 400;
-    margin: 0;
-    overflow: hidden;
+  font-family: "OpenSans", sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+main {
+  opacity: 0;
+  min-height: calc(100vh - 97px - 97px);
 }
 
 h1 {
-    @include textReset();
-    font-weight: 700;
-    font-size: $size-h1;
+  @include textReset();
+  font-weight: 700;
+  font-size: $size-3;
 }
 h2 {
-    @include textReset();
-    font-weight: 700;
-    font-size: $size-h2;
+  @include textReset();
+  font-weight: 700;
+  font-size: $size-2;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+button {
+  cursor: pointer;
 }
 
 /* Global */
 .container {
-    max-width: 1920px;
-    margin: 0 auto;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.section-common {
+  padding: 60px 100px;
+}
+.h1-common {
+  margin-bottom: 30px;
 }
 
-.btn-reset {
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}

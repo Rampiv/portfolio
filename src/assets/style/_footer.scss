@@ -1,0 +1,13 @@
+@use "variables" as *;
+@use "mixin" as *;
+.footer {
+  @include flexible();
+  min-height: 97px;
+  border-radius: 7px 7px 0 0;
+  box-shadow: 0px 5px 10px $black;
+  background-color: $black;
+  color: $white;
+  &__span {
+    font-size: $size-1;
+  }
+}

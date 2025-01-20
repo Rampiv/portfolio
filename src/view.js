@@ -62,7 +62,7 @@ export function sectionAbout() {
       el("img.about__img", { src: `${me}` }),
       el("div.about__skills", [
         el("div.about__skills-title", [
-          el("h2.about__skills-h2", "Frondend"),
+          el("h2.about__skills-h2", "Frontend"),
           el("span.about__skills-span", "разработчик")
         ]),
         el("div.about__skills-description", [

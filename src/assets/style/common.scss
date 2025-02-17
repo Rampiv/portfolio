@@ -4,6 +4,9 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 *,
@@ -30,6 +33,7 @@ body {
 main {
   opacity: 0;
   min-height: calc(100vh - 97px - 97px);
+  @include flexible();
 }
 
 h1 {
@@ -61,4 +65,3 @@ button {
 .h1-common {
   margin-bottom: 30px;
 }
-

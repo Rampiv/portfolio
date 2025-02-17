@@ -4,12 +4,15 @@
 .about {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  align-items: center;
   &__img {
     display: flex;
     justify-self: center;
     align-self: center;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.8);
+    max-height: 600px;
   }
   &__skills{
     padding: 30px;

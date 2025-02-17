@@ -25,7 +25,7 @@ const contactsLink = document.getElementById("contactsLink");
 loader();
 
 router
-  .on("/", () => {
+  .on("/*", () => {
     main.append(sectionAbout());
   })
   .on("/about", () => {

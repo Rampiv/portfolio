@@ -95,7 +95,7 @@ export function sectionProjects() {
             el("h2.projects__item-h2", "Магазин мебели: SitDownPls"),
             el("p.projects__item-stack", "html, scss, js, gulp"),
             el("a.projects__item-link", "Переход на сайт", {
-              href: "#",
+              href: "https://rampiv.github.io/pet-1-page/",
               target: "_blank"
             }),
             el("a.projects__item-link", "GitHub", {
@@ -113,7 +113,7 @@ export function sectionProjects() {
             el("h2.projects__item-h2", "Магазин мебели: SitDownPls"),
             el("p.projects__item-stack", "html, scss, js, gulp"),
             el("a.projects__item-link", "Переход на сайт", {
-              href: "#",
+              href: "https://rampiv.github.io/pet-1-page/",
               target: "_blank"
             }),
             el("a.projects__item-link", "GitHub", {

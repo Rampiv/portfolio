@@ -7,9 +7,13 @@ import {
   createMain,
   createFooter,
   sectionAbout,
-  sectionProjects
+  sectionProjects,
+  sectionContacts,
+  projectsModal,
+  addCoinContent
 } from "./view.js";
 import { loader, changePage } from "./animation.js";
+import addEventModalBts from "./projects.js";
 
 const router = new Navigo("/");
 
@@ -25,14 +29,22 @@ const contactsLink = document.getElementById("contactsLink");
 loader();
 
 router
-  .on("/*", () => {
+  .on("/", () => {
+    main.append(sectionAbout());
+  })
+  .on("", () => {
     main.append(sectionAbout());
   })
   .on("/about", () => {
     main.append(sectionAbout());
   })
   .on("/projects", () => {
-    main.append(sectionProjects());
+    main.append(sectionProjects(), projectsModal());
+    const pet2DemoBtn = document.getElementById("pet2DemoBtn");
+    addEventModalBts(pet2DemoBtn, addCoinContent);
+  })
+  .on("/contacts", () => {
+    main.append(sectionContacts());
   });
 router.resolve();
 
@@ -44,10 +56,21 @@ router.resolve();
       case "/about":
         changePage(sectionAbout());
         break;
-      case "/projects":
-        changePage(sectionProjects());
+      case "/projects": {
+        changePage({
+          array: [sectionProjects(), projectsModal()],
+          event: () => {
+            addEventModalBts(
+              document.getElementById("pet2DemoBtn"),
+              addCoinContent
+            );
+          }
+        });
+
         break;
-      // case ("/contacts"): changePage(sectionContacts());
+      }
+      case "/contacts":
+        changePage(sectionContacts());
     }
   });
 });

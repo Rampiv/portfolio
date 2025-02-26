@@ -1,0 +1,23 @@
+@use "variables" as *;
+@use "mixin" as *;
+
+.contacts {
+  .contacts__list {
+    @include listReset();
+    @include flexible();
+    .contacts__item {
+      .contacts__link {
+        @include flexible();
+        flex-direction: column;
+        .contacts__img {
+          max-width: 100%;
+          object-fit: cover;
+        }
+        .contacts__img-description {
+          font-size: $size-6;
+          width: fit-content;
+        }
+      }
+    }
+  }
+}

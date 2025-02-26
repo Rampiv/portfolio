@@ -34,6 +34,7 @@ main {
   opacity: 0;
   min-height: calc(100vh - 97px - 97px);
   @include flexible();
+  position: relative;
 }
 
 h1 {
@@ -64,4 +65,10 @@ button {
 }
 .h1-common {
   margin-bottom: 30px;
+}
+
+@media (max-width: 320px) {
+  body {
+    width: 320px;
+  }
 }

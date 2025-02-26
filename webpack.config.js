@@ -40,7 +40,7 @@ const config = {
         use: [stylesHandler, "css-loader", "postcss-loader", "sass-loader"]
       },
       {
-        test: /\.(png|jpg|webp)$/i,
+        test: /\.(png|jpg|webp|gif)$/i,
         type: "asset/resource"
       },
       {

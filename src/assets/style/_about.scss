@@ -39,3 +39,75 @@
     }
   }
 }
+
+@media (max-width: 1280px) {
+  .about {
+    &__skills{
+      &-title{
+        .about__skills-h2 {
+          font-size: $size-4;
+        }
+        .about__skills-span{
+          font-size: $size-4;
+        }
+      }
+      &-description{
+        font-size: $size-7;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .about {
+    grid-template-columns: 1fr 1fr;
+    &__skills{
+      &-title{
+        .about__skills-h2 {
+          font-size: $size-2;
+        }
+        .about__skills-span{
+          font-size: $size-2;
+        }
+      }
+      &-description{
+        font-size: $size-7;
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .about {
+    padding: 30px;
+    &__img {
+      min-width: 215px;
+    }
+    &__skills{
+      &-title{
+        .about__skills-h2 {
+          font-size: $size-1;
+        }
+        .about__skills-span{
+          font-size: $size-1;
+        }
+      }
+      &-description{
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &__img {
+      min-width: fit-content;
+      max-height: 300px;
+    }
+  }
+}

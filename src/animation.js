@@ -20,7 +20,7 @@ export function loader() {
     .to(".header__nav-item_about", { opacity: 1 }, "<.25")
     .to(".header__nav-item_projects", { opacity: 1 }, "<.25")
     .to("main", { opacity: 1 })
-    .fromTo("footer", { y: 100 }, { y: 0 });
+    .fromTo("footer", { y: 110 }, { y: 0 });
 
   window.addEventListener("load", function () {
     headerTimeLine.play();
@@ -36,9 +36,43 @@ export function changePage(section) {
       opacity: 0,
       duration: 0.25,
       onComplete: () => {
-        main.append(section);
+        if (section.array) {
+          const array = section.array;
+          array.forEach(item => {
+            main.append(item);
+          });
+          section.event();
+        } else {
+          main.append(section);
+        }
       }
     })
     .to("main", { opacity: 1, duration: 0.25 });
   mainTimeLine.play();
+}
+
+export function modalOpen() {
+  const modalTimeLine = gsap.timeline({ paused: true });
+  modalTimeLine
+    .fromTo(".modal-back", { opacity: 0 }, { opacity: 1, duration: 0.25 })
+    .fromTo(".modal", { opacity: 0 }, { opacity: 1, duration: 0.25 });
+  modalTimeLine.play();
+}
+
+export function modalClose() {
+  const modalTimeLine = gsap.timeline({ paused: true });
+  modalTimeLine
+    .fromTo(".modal-back", { opacity: 1 }, { opacity: 0, duration: 0.25 })
+    .fromTo(
+      ".modal",
+      { opacity: 1 },
+      {
+        opacity: 0,
+        duration: 0.25,
+        onComplete: () => {
+          document.querySelector(".modal-back").style.display = "none";
+        }
+      }
+    );
+  modalTimeLine.play();
 }

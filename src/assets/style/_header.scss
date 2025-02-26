@@ -27,3 +27,29 @@
     }
   }
 }
+
+@media (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    padding: 20px 20px;
+    gap: 30px;
+    &__nav{
+      width: 100%;
+      // font-size: $size-7;
+      // gap: 0;
+      justify-content: space-between;
+      &-item{
+        text-wrap: nowrap;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .header {
+    &__nav{
+      font-size: $size-7;
+      gap: 0;
+    }
+  }
+}

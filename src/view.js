@@ -3,6 +3,11 @@ import { el } from "redom";
 import sitDownPls from "./assets/img/sitDownPls.webp";
 import favicon from "./assets/img/favicon.png";
 import me from "./assets/img/me.webp";
+import qr from "./assets/img/qr.webp";
+import coinPrewiev from "./assets/img/coinPrewiev.webp";
+import coinCypress from "./assets/img/coinCypress.gif";
+import coinExample from "./assets/img/coinExample.gif";
+import highpassPrewiev from "./assets/img/highpassPrewiev.webp";
 
 export function createFavicon() {
   return el("link", { rel: "icon", type: "image/png", href: `${favicon}` });
@@ -59,7 +64,7 @@ export function sectionAbout() {
   return el(
     "div.container",
     el("section.section-common.about#about", [
-      el("img.about__img", { src: `${me}` }),
+      el("img.about__img", { src: `${me}`, alt: "Фотография" }),
       el("div.about__skills", [
         el("div.about__skills-title", [
           el("h2.about__skills-h2", "Frontend"),
@@ -70,6 +75,7 @@ export function sectionAbout() {
           el("span", "FLEX, GRID"),
           el("span", "Bootstrap"),
           el("span", "JavaScript, TypeScript"),
+          el("span", "React"),
           el("span", "Jest, Cypress"),
           el("span", "Git, GitHub"),
           el("span", "Gulp"),
@@ -105,37 +111,34 @@ export function sectionProjects() {
           ])
         ]),
         el("div.card-common.projects__item", [
-          el("img.projects__item-img", {
-            src: `${sitDownPls}`,
+          el("img.projects__item-img.projects__item-img_2", {
+            src: `${coinPrewiev}`,
             alt: "Preview работы"
           }),
           el("div.projects__item-content", [
-            el("h2.projects__item-h2", "Магазин мебели: SitDownPls"),
-            el("p.projects__item-stack", "html, scss, js, gulp"),
-            el("a.projects__item-link", "Переход на сайт", {
-              href: "https://rampiv.github.io/pet-1-page/",
-              target: "_blank"
-            }),
+            el("h2.projects__item-h2", "Банковское приложение: Coin"),
+            el("p.projects__item-stack", "html, scss, js, webpack, cypress"),
+            el("a.projects__item-link", { id: "pet2DemoBtn" }, "Демонстрация"),
             el("a.projects__item-link", "GitHub", {
-              href: "https://github.com/Rampiv/Pet-1",
+              href: "https://github.com/Rampiv/pet-2-coin",
               target: "_blank"
             })
           ])
         ]),
         el("div.card-common.projects__item", [
           el("img.projects__item-img", {
-            src: `${sitDownPls}`,
+            src: `${highpassPrewiev}`,
             alt: "Preview работы"
           }),
           el("div.projects__item-content", [
-            el("h2.projects__item-h2", "Магазин мебели: SitDownPls"),
+            el("h2.projects__item-h2", "Студия: High pass"),
             el("p.projects__item-stack", "html, scss, js, gulp"),
             el("a.projects__item-link", "Переход на сайт", {
-              href: "#",
+              href: "https://rampiv.github.io/pet-3-page/",
               target: "_blank"
             }),
             el("a.projects__item-link", "GitHub", {
-              href: "https://github.com/Rampiv/Pet-1",
+              href: "https://github.com/Rampiv/pet-3-highpass",
               target: "_blank"
             })
           ])
@@ -143,4 +146,45 @@ export function sectionProjects() {
       ])
     ])
   );
+}
+export function sectionContacts() {
+  return el(
+    "div.container",
+    el("section.section-common.contacts#contacts", [
+      el("div.contacts__list", [
+        el("div.contacts__item", [
+          el(
+            "a.contacts__link",
+            { href: "https://t.me/vanpinvan", target: "_blank" },
+            [
+              el("img.contacts__img", { src: `${qr}`, alt: "QR код Телеграм" }),
+              el(
+                "figcaption.contacts__img-description",
+                "Интерактивная картинка"
+              )
+            ]
+          )
+        ])
+      ])
+    ])
+  );
+}
+export function projectsModal() {
+  return el(
+    "div.modal-back",
+    el("div.modal", el("a.modal-close", { href: "#" }, "Закрыть"))
+  );
+}
+
+export function addCoinContent() {
+  return el("div.modal-content-coin", [
+    el("img", {
+      src: `${coinExample}`,
+      alt: "Preview Coin"
+    }),
+    el("img", {
+      src: `${coinCypress}`,
+      alt: "Работа Cypress"
+    })
+  ]);
 }

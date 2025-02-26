@@ -126,7 +126,7 @@ export function sectionProjects() {
           ])
         ]),
         el("div.card-common.projects__item", [
-          el("img.projects__item-img", {
+          el("img.projects__item-img.projects__item-img_2", {
             src: `${highpassPrewiev}`,
             alt: "Preview работы"
           }),
@@ -175,7 +175,6 @@ export function projectsModal() {
     el("div.modal", el("a.modal-close", { href: "#" }, "Закрыть"))
   );
 }
-
 export function addCoinContent() {
   return el("div.modal-content-coin", [
     el("img", {

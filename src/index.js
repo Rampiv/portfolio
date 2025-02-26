@@ -35,6 +35,9 @@ router
   .on("", () => {
     main.append(sectionAbout());
   })
+  .on("/portfolioPage", () => {
+    main.append(sectionAbout());
+  })
   .on("/about", () => {
     main.append(sectionAbout());
   })

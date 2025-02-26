@@ -36,6 +36,7 @@ export function changePage(section) {
       opacity: 0,
       duration: 0.25,
       onComplete: () => {
+        main.innerHTML = "";
         if (section.array) {
           const array = section.array;
           array.forEach(item => {

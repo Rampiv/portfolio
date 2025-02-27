@@ -1,53 +1,48 @@
 import Navigo from "navigo";
-import "./assets/style/style.scss";
+import "./styles/style.scss";
+import { eventLoader, changePage } from "./animation.js";
 import {
-  createFavicon,
-  winLoader,
-  createHeader,
-  createMain,
   createFooter,
-  sectionAbout,
-  sectionProjects,
-  sectionContacts,
-  projectsModal,
-  addCoinContent
-} from "./view.js";
-import { loader, changePage } from "./animation.js";
+  createHeader,
+  loader,
+  createMain,
+  modal,
+  coinContent
+} from "./components";
+
 import addEventModalBts from "./projects.js";
+import { ROUTES_MAP } from "./routes";
 
 const router = new Navigo("/");
 
-document.querySelector("head").append(createFavicon());
 document
   .querySelector("body")
-  .append(winLoader(), createHeader(), createMain(), createFooter());
+  .append(loader(), createHeader(), createMain(), createFooter());
 const main = document.querySelector("main");
 const projectsLink = document.getElementById("projectsLink");
 const aboutLink = document.getElementById("aboutLink");
 const contactsLink = document.getElementById("contactsLink");
 
-loader();
+eventLoader();
 
 router
-  .on("/", () => {
-    main.append(sectionAbout());
+  .on(ROUTES_MAP.default.href, () => {
+    main.innerHTML = "";
+    main.append(ROUTES_MAP.default.component());
   })
-  .on("", () => {
-    main.append(sectionAbout());
+  .on(ROUTES_MAP.about.href, () => {
+    main.innerHTML = "";
+    main.append(ROUTES_MAP.about.component());
   })
-  .on("/portfolioPage", () => {
-    main.append(sectionAbout());
-  })
-  .on("/about", () => {
-    main.append(sectionAbout());
-  })
-  .on("/projects", () => {
-    main.append(sectionProjects(), projectsModal());
+  .on(ROUTES_MAP.projects.href, () => {
+    main.innerHTML = "";
+    main.append(ROUTES_MAP.projects.component(), modal());
     const pet2DemoBtn = document.getElementById("pet2DemoBtn");
-    addEventModalBts(pet2DemoBtn, addCoinContent);
+    addEventModalBts(pet2DemoBtn, coinContent);
   })
-  .on("/contacts", () => {
-    main.append(sectionContacts());
+  .on(ROUTES_MAP.contacts.href, () => {
+    main.innerHTML = "";
+    main.append(ROUTES_MAP.contacts.component());
   });
 router.resolve();
 
@@ -56,24 +51,24 @@ router.resolve();
     e.preventDefault();
     router.navigate(item.getAttribute("href"));
     switch (item.getAttribute("href")) {
-      case "/about":
-        changePage(sectionAbout());
+      case ROUTES_MAP.about.href:
+        changePage(ROUTES_MAP.default.component());
         break;
-      case "/projects": {
+      case ROUTES_MAP.projects.href: {
         changePage({
-          array: [sectionProjects(), projectsModal()],
+          array: [ROUTES_MAP.projects.component(), modal()],
           event: () => {
             addEventModalBts(
               document.getElementById("pet2DemoBtn"),
-              addCoinContent
+              coinContent
             );
           }
         });
 
         break;
       }
-      case "/contacts":
-        changePage(sectionContacts());
+      case ROUTES_MAP.contacts.href:
+        changePage(ROUTES_MAP.contacts.component());
     }
   });
 });

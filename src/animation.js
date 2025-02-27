@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 
-export function loader() {
+export function eventLoader() {
   const headerTimeLine = gsap.timeline({ paused: true });
   const height = window.innerHeight - 94;
   let width = window.innerWidth;

@@ -2,7 +2,7 @@ import { sectionAbout, sectionProjects, sectionContacts } from "../sections";
 
 export const ROUTES_MAP = {
   default: {
-    href: "/portfolioPage",
+    href: "/portfolio",
     component: sectionAbout
   },
   about: {

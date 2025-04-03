@@ -67,8 +67,14 @@ button {
   margin-bottom: 30px;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 900px) {
+  .section-common {
+    padding: 60px 50px;
+  }
+}
+
+@media (max-width: 400px) {
   body {
-    width: 320px;
+    width: 400px;
   }
 }

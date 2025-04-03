@@ -3,38 +3,49 @@
 
 .about {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   align-items: center;
+  gap: 40px;
   &__img {
     display: flex;
     justify-self: center;
     align-self: center;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.8);
-    max-height: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    min-height: 600px;
+    object-fit: cover;
   }
-  &__skills{
+  &__skills {
     padding: 30px;
     @include flexible();
     flex-direction: column;
-    justify-content: flex-start;
-    gap: 30px;
-    &-title{
-      @include flexible();
-      flex-direction: column;
-      .about__skills-h2 {
-        font-weight: 700;
-        font-size: $size-5;
-      }
-      .about__skills-span{
-        font-weight: 600;
-        font-size: $size-4;
-      }
+    align-items: flex-start;
+    gap: 40px;
+  }
+  &__title {
+    @include flexible();
+    flex-direction: column;
+    align-items: flex-start;
+    &-h2 {
+      font-weight: 700;
+      font-size: $size-5;
     }
-    &-description{
-      @include flexible();
-      flex-direction: column;
+    &-span {
+      font-weight: 600;
+      font-size: $size-4;
+    }
+  }
+  &__h3 {
+    font-weight: 600;
+    font-size: $size-2;
+  }
+  &__list {
+    @include flexible();
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    &-item {
       font-size: $size-1;
     }
   }
@@ -42,18 +53,16 @@
 
 @media (max-width: 1280px) {
   .about {
-    &__skills{
-      &-title{
-        .about__skills-h2 {
-          font-size: $size-4;
-        }
-        .about__skills-span{
-          font-size: $size-4;
-        }
+    &__title {
+      &-h2 {
+        font-size: $size-4;
       }
-      &-description{
-        font-size: $size-7;
+      &-span {
+        font-size: $size-4;
       }
+    }
+    &__description {
+      font-size: $size-7;
     }
   }
 }
@@ -61,18 +70,20 @@
 @media (max-width: 900px) {
   .about {
     grid-template-columns: 1fr 1fr;
-    &__skills{
-      &-title{
-        .about__skills-h2 {
-          font-size: $size-2;
-        }
-        .about__skills-span{
-          font-size: $size-2;
-        }
+    &__img{
+      min-height: 300px;
+    }
+
+    &__title {
+      &-h2 {
+        font-size: $size-2;
       }
-      &-description{
-        font-size: $size-7;
+      &-span {
+        font-size: $size-2;
       }
+    }
+    &__description {
+      font-size: $size-7;
     }
   }
 }
@@ -80,16 +91,16 @@
 @media (max-width: 650px) {
   .about {
     padding: 30px;
-    &__skills{
-      &-title{
+    &__skills {
+      &-title {
         .about__skills-h2 {
           font-size: $size-1;
         }
-        .about__skills-span{
+        .about__skills-span {
           font-size: $size-1;
         }
       }
-      &-description{
+      &-description {
         text-align: center;
       }
     }
@@ -102,9 +113,8 @@
     flex-direction: column;
     height: 100%;
     &__img {
-      object-fit: cover;
       width: 100%;
-      max-height: 300px;
+      min-height: fit-content;
     }
   }
 }

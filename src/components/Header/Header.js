@@ -8,7 +8,7 @@ export function createHeader() {
       el("div.header", [
         el(
           "div.header__logo",
-          el("a.header__link-name", "Rampiv", { href: "/portfolioPage" })
+          el("a.header__link-name", "Rampiv", { href: "/portfolio" })
         ),
         el("ul.header__nav", [
           el(

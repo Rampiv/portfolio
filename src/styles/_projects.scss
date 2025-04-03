@@ -17,11 +17,8 @@
         user-select: none;
         -webkit-user-drag: none;
         border-radius: 5px;
-        min-height: 252px;
+        height: 252px;
         object-fit: cover;
-      }
-      &-img_2 {
-        height: 100%;
       }
       &-content {
         @include flexible();
@@ -81,12 +78,22 @@
     border: 1px solid $black;
     border-radius: 5px;
     z-index: 99999;
+    width: 70%;
+    height: 60%;
     .modal-content-coin {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      align-items: center;
-      justify-content: center;
+      @include flexible();
+      justify-content: flex-start;
+      flex-direction: column;
       gap: 30px;
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
     }
     .modal-close {
       position: absolute;
@@ -96,9 +103,8 @@
   }
 }
 
-
 @media (max-width: 1280px) {
-  .projects{
+  .projects {
     .projects__list {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -106,7 +112,7 @@
 }
 
 @media (max-width: 900px) {
-  .projects{
+  .projects {
     padding: 30px 30px;
     .projects__list {
       grid-template-columns: 1fr;

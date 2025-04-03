@@ -1,7 +1,8 @@
 import { el } from "redom";
-import sitDownPls from "../../assets/sitDownPls.webp";
-import coinPrewiev from "../../assets/coinPrewiev.webp";
-import highpassPrewiev from "../../assets/highpassPrewiev.webp";
+import sitDownPlsPreview from "../../assets/sitDownPls.webp";
+import coinPreview from "../../assets/coinPreview.webp";
+import highpassPreview from "../../assets/highpassPreview.webp";
+import marusyaPreview from "../../assets/marusyaPreview.webp";
 
 export function sectionProjects() {
   return el(
@@ -10,8 +11,26 @@ export function sectionProjects() {
       el("h1.h1-common.projects__h1", "Мои работы"),
       el("div.projects__list", [
         el("div.card-common.projects__item", [
+          el("img.projects__item-img.projects__item-img_2", {
+            src: `${highpassPreview}`,
+            alt: "Preview работы"
+          }),
+          el("div.projects__item-content", [
+            el("h2.projects__item-h2", "Студия: High pass"),
+            el("p.projects__item-stack", "html, scss, js, gulp"),
+            el("a.projects__item-link", "Переход на сайт", {
+              href: "https://rampiv.github.io/pet-3-page/",
+              target: "_blank"
+            }),
+            el("a.projects__item-link", "GitHub", {
+              href: "https://github.com/Rampiv/pet-3-highpass",
+              target: "_blank"
+            })
+          ])
+        ]),
+        el("div.card-common.projects__item", [
           el("img.projects__item-img", {
-            src: `${sitDownPls}`,
+            src: `${sitDownPlsPreview}`,
             alt: "Preview работы"
           }),
           el("div.projects__item-content", [
@@ -29,7 +48,7 @@ export function sectionProjects() {
         ]),
         el("div.card-common.projects__item", [
           el("img.projects__item-img.projects__item-img_2", {
-            src: `${coinPrewiev}`,
+            src: `${coinPreview}`,
             alt: "Preview работы"
           }),
           el("div.projects__item-content", [
@@ -44,18 +63,18 @@ export function sectionProjects() {
         ]),
         el("div.card-common.projects__item", [
           el("img.projects__item-img.projects__item-img_2", {
-            src: `${highpassPrewiev}`,
+            src: `${marusyaPreview}`,
             alt: "Preview работы"
           }),
           el("div.projects__item-content", [
-            el("h2.projects__item-h2", "Студия: High pass"),
-            el("p.projects__item-stack", "html, scss, js, gulp"),
+            el("h2.projects__item-h2", "Поиск фильмов: Маруся"),
+            el("p.projects__item-stack", "html, scss, ts, react, vite"),
             el("a.projects__item-link", "Переход на сайт", {
-              href: "https://rampiv.github.io/pet-3-page/",
+              href: "https://rampiv.github.io/Marusya-react/",
               target: "_blank"
             }),
             el("a.projects__item-link", "GitHub", {
-              href: "https://github.com/Rampiv/pet-3-highpass",
+              href: "https://github.com/Rampiv/Marusya-react",
               target: "_blank"
             })
           ])

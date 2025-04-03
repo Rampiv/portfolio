@@ -18,3 +18,6 @@
 ### git filter-branch -f --prune-empty --subdirectory-filter dist 
 ### git push -f origin gh-pages 
 ### git checkout -
+
+# Упрощение загруки на GitPages
+### npm run deploy

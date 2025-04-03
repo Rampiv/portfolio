@@ -2,8 +2,9 @@ import { gsap } from "gsap";
 
 export function eventLoader() {
   const headerTimeLine = gsap.timeline({ paused: true });
-  const height = window.innerHeight - 94;
   let width = window.innerWidth;
+  const height = window.innerHeight - 94;
+  const isMobile = width < 700;
   if (width > 1920) {
     width = 1920;
   }
@@ -11,8 +12,15 @@ export function eventLoader() {
   headerTimeLine
     .fromTo(".loader", { opacity: 0 }, { opacity: 1, duration: 0.25 })
     .fromTo(".loader", { y: 0 }, { y: -(height / 2), duration: 0.25 })
-    .to(".loader", { width, x: -((width - 199) / 2), duration: 0.25 })
-    .to(".loader__h2", { x: -((width - 247.5) / 2), duration: 0.25 })
+    .to(".loader", { width, x: -((width - 199) / 2), duration: 0.25 });
+
+  if (!isMobile) {
+    headerTimeLine.to(".loader__h2", {
+      x: -((width - 247.5) / 2),
+      duration: 0.25
+    });
+  }
+  headerTimeLine
     .to(".header", { opacity: 1, duration: 0.25 })
     .to(".loader", { display: "none", duration: 0 })
     .to(".header__link-name", { opacity: 1, duration: 0 })

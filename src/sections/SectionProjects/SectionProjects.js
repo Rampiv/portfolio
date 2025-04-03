@@ -1,5 +1,5 @@
 import { el } from "redom";
-import sitDownPlsPreview from "../../assets/sitDownPls.webp";
+import sitDownPlsPreview from "../../assets/sitDownPlsPreview.webp";
 import coinPreview from "../../assets/coinPreview.webp";
 import highpassPreview from "../../assets/highpassPreview.webp";
 import marusyaPreview from "../../assets/marusyaPreview.webp";

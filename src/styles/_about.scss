@@ -37,6 +37,7 @@
     }
   }
   &__h3 {
+    @include textReset();
     font-weight: 600;
     font-size: $size-2;
   }
@@ -61,15 +62,22 @@
         font-size: $size-4;
       }
     }
-    &__description {
-      font-size: $size-7;
+    &__h3 {
+      font-size: $size-2;
+    }
+    &__list {
+      &-item {
+        font-size: $size-7;
+      }
     }
   }
+  
 }
 
 @media (max-width: 900px) {
   .about {
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
     &__img{
       min-height: 300px;
     }
@@ -91,6 +99,7 @@
 @media (max-width: 650px) {
   .about {
     padding: 30px;
+    gap: 10px;
     &__skills {
       &-title {
         .about__skills-h2 {
@@ -112,6 +121,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    gap: 0;
     &__img {
       width: 100%;
       min-height: fit-content;

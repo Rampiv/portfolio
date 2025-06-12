@@ -10,7 +10,11 @@
       flex-direction: column;
       padding: 5px;
       border-radius: 5px;
-      background-color: $color3;
+      background: linear-gradient(
+        to bottom,
+        rgba(138, 138, 138, 0),
+        rgba(138, 138, 138, 0.3)
+      );
       &-img {
         margin-bottom: auto;
         width: 100%;
@@ -19,6 +23,13 @@
         border-radius: 5px;
         height: 252px;
         object-fit: cover;
+        transition: all 0.3s ease-in-out;
+        @media (hover: hover) {
+          &:hover {
+            transform: scale(1.5);
+            box-shadow: 5px 5px 50px black;
+          }
+        }
       }
       &-content {
         @include flexible();

@@ -5,12 +5,21 @@ import highpassPreview from "../../assets/highpassPreview.webp";
 import marusyaPreview from "../../assets/marusyaPreview.webp";
 import rampivClickerPreview from "../../assets/rampivClickerPreview.webp";
 import habitisPreview from "../../assets/habitisPreview.webp";
+import matovnikovaPreview from "../../assets/matovnikovaPreview.png";
 
 const projects = [
   {
+    title: "Сайт психолога",
+    img: matovnikovaPreview,
+    stack: "scss, ts, vite, react, gsap",
+    demoLink: "https://rampiv.github.io/MatovnikovaMargarita/",
+    githubLink: "https://github.com/Rampiv/MatovnikovaMargarita",
+    imgClass: "projects__item-img_2"
+  },
+  {
     title: "Кликер на реакцию",
     img: rampivClickerPreview,
-    stack: "html, scss, ts, vite, react",
+    stack: "scss, ts, vite, react",
     demoLink: "https://rampiv.github.io/RampivClicker/",
     githubLink: "https://github.com/Rampiv/RampivClicker",
     imgClass: "projects__item-img_2"
@@ -18,7 +27,7 @@ const projects = [
   {
     title: "Трекер привычек",
     img: habitisPreview,
-    stack: "html, scss, ts, vite, react",
+    stack: "scss, ts, vite, react",
     demoLink: "https://rampiv.github.io/habitisforme/",
     githubLink: "https://github.com/Rampiv/habitisforme",
     imgClass: "projects__item-img_2"
@@ -26,7 +35,7 @@ const projects = [
   {
     title: "Поиск фильмов: Маруся",
     img: marusyaPreview,
-    stack: "html, scss, ts, react, vite",
+    stack: "scss, ts, react, vite",
     demoLink: "https://rampiv.github.io/Marusya-react/",
     githubLink: "https://github.com/Rampiv/Marusya-react",
     imgClass: "projects__item-img_2"
@@ -34,7 +43,7 @@ const projects = [
   {
     title: "Студия: High pass",
     img: highpassPreview,
-    stack: "html, scss, js, gulp",
+    stack: "scss, js, gulp",
     demoLink: "https://rampiv.github.io/pet-3-page/",
     githubLink: "https://github.com/Rampiv/pet-3-highpass",
     imgClass: "projects__item-img_2"
@@ -42,14 +51,14 @@ const projects = [
   {
     title: "Магазин мебели: SitDownPls",
     img: sitDownPlsPreview,
-    stack: "html, scss, js, gulp",
+    stack: "scss, js, gulp",
     demoLink: "https://rampiv.github.io/pet-1-page/",
     githubLink: "https://github.com/Rampiv/Pet-1"
   },
   {
     title: "Банковское приложение: Coin",
     img: coinPreview,
-    stack: "html, scss, js, webpack, cypress",
+    stack: "scss, js, webpack, cypress",
     demoLink: "#",
     githubLink: "https://github.com/Rampiv/pet-2-coin",
     demoBtnText: "Демонстрация",

@@ -5,7 +5,7 @@ import highpassPreview from "../../assets/highpassPreview.webp";
 import marusyaPreview from "../../assets/marusyaPreview.webp";
 import rampivClickerPreview from "../../assets/rampivClickerPreview.webp";
 import habitisPreview from "../../assets/habitisPreview.webp";
-import matovnikovaPreview from "../../assets/matovnikovaPreview.png";
+import matovnikovaPreview from "../../assets/matovnikovaPreview.webp";
 
 const projects = [
   {

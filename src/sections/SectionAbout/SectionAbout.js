@@ -16,7 +16,7 @@ export function sectionAbout() {
           el("ul.about__list", [
             el(
               "li.about__list-item",
-              "Фронтенд: HTML/CSS, JavaScript/TypeScript, React"
+              "Фронтенд: HTML/CSS, JavaScript/TypeScript, React, Redux Toolkit"
             ),
             el("li.about__list-item", "Инструменты: Vite, Webpack, Gulp"),
             el(

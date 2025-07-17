@@ -6,8 +6,18 @@ import marusyaPreview from "../../assets/marusyaPreview.webp";
 import rampivClickerPreview from "../../assets/rampivClickerPreview.webp";
 import habitisPreview from "../../assets/habitisPreview.webp";
 import matovnikovaPreview from "../../assets/matovnikovaPreview.webp";
+import challengePreview from "../../assets/challengePreview.webp";
+import alexandrMeditationPreview from "../../assets/alexandrMeditationPreview.webp";
 
 const projects = [
+  {
+    title: "TODO",
+    img: challengePreview,
+    stack: "scss, ts, vite, redux toolkit, firebase, ant design, chart.js",
+    demoLink: "https://rampiv.github.io/sportChallendge/",
+    githubLink: "https://github.com/Rampiv/sportChallendge",
+    imgClass: "projects__item-img_2"
+  },
   {
     title: "Сайт психолога",
     img: matovnikovaPreview,
@@ -30,6 +40,14 @@ const projects = [
     stack: "scss, ts, vite, react",
     demoLink: "https://rampiv.github.io/habitisforme/",
     githubLink: "https://github.com/Rampiv/habitisforme",
+    imgClass: "projects__item-img_2"
+  },
+  {
+    title: "Йога",
+    img: alexandrMeditationPreview,
+    stack: "ts, redux toolkit, antd, apexcharts",
+    demoLink: "https://rampiv.github.io/meditationAlexandr/",
+    githubLink: "https://github.com/Rampiv/meditationAlexandr",
     imgClass: "projects__item-img_2"
   },
   {

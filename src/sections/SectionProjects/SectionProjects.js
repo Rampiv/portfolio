@@ -44,16 +44,16 @@ const projects = [
     title: "Студия: High pass",
     img: highpassPreview,
     stack: "scss, js, gulp",
-    demoLink: "https://rampiv.github.io/pet-3-page/",
-    githubLink: "https://github.com/Rampiv/pet-3-highpass",
+    demoLink: "https://rampiv.github.io/HighPass/",
+    githubLink: "https://github.com/Rampiv/HighPass",
     imgClass: "projects__item-img_2"
   },
   {
     title: "Магазин мебели: SitDownPls",
     img: sitDownPlsPreview,
     stack: "scss, js, gulp",
-    demoLink: "https://rampiv.github.io/pet-1-page/",
-    githubLink: "https://github.com/Rampiv/Pet-1"
+    demoLink: "https://rampiv.github.io/SitDownPls/",
+    githubLink: "https://github.com/Rampiv/SitDownPls"
   },
   {
     title: "Банковское приложение: Coin",

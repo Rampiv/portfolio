@@ -8,8 +8,26 @@ import habitisPreview from "../../assets/habitisPreview.webp";
 import matovnikovaPreview from "../../assets/matovnikovaPreview.webp";
 import challengePreview from "../../assets/challengePreview.webp";
 import alexandrMeditationPreview from "../../assets/alexandrMeditationPreview.webp";
+import vexenHubPreview from "../../assets/vexenHubPreview.webp";
+import homeFarmacyPreview from "../../assets/homeFarmacyPreview.webp";
 
 const projects = [
+  {
+    title: "HomeFarmacy",
+    img: homeFarmacyPreview,
+    stack: "scss, ts, vite, react",
+    demoLink: "https://rampiv.github.io/HomeFarmacy/",
+    githubLink: "https://github.com/Rampiv/HomeFarmacy",
+    imgClass: "projects__item-img_2"
+  },
+  {
+    title: "VexenHub",
+    img: vexenHubPreview,
+    stack: "scss, ts, vite, react",
+    demoLink: "https://rampiv.github.io/VexenNexus/",
+    githubLink: "https://github.com/Rampiv/VexenNexus",
+    imgClass: "projects__item-img_2"
+  },
   {
     title: "TODO",
     img: challengePreview,
@@ -86,13 +104,15 @@ const projects = [
 
 function createProjectCard(project) {
   return el("div.card-common.projects__item", [
-    el(
-      `img.projects__item-img${project.imgClass ? "." + project.imgClass : ""}`,
-      {
-        src: project.img,
-        alt: `Preview проекта ${project.title}`
-      }
-    ),
+    el(`picture.projects__img-container`, [
+      el(
+        `img.projects__item-img${project.imgClass ? "." + project.imgClass : ""}`,
+        {
+          src: project.img,
+          alt: `Preview проекта ${project.title}`
+        }
+      )
+    ]),
     el("div.projects__item-content", [
       el("h2.projects__item-h2", project.title),
       el("p.projects__item-stack", project.stack),

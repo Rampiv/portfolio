@@ -1,71 +1,77 @@
 @use "variables" as *;
 @use "mixin" as *;
 .projects {
-  .projects__list {
+  &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    .projects__item {
-      display: flex;
-      flex-direction: column;
-      padding: 5px;
-      border-radius: 5px;
-      background: linear-gradient(
-        to bottom,
-        rgba(138, 138, 138, 0),
-        rgba(138, 138, 138, 0.3)
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 5px;
+    background: linear-gradient(
+      to bottom,
+      rgba(138, 138, 138, 0),
+      rgba(138, 138, 138, 0.3)
       );
-      &-img {
-        margin-bottom: auto;
-        width: 100%;
-        user-select: none;
-        -webkit-user-drag: none;
-        border-radius: 5px;
-        height: 252px;
-        object-fit: cover;
-        transition: all 0.3s ease-in-out;
-        @media (hover: hover) {
-          &:hover {
-            transform: scale(1.2);
-            box-shadow: 5px 5px 50px black;
-          }
-        }
-      }
-      &-content {
-        @include flexible();
-        flex-direction: column;
-        gap: 10px;
-        padding: 30px 25px;
-        .projects__item-h2 {
-          text-align: center;
-        }
-        .projects__item-stack {
-          color: $color1;
-        }
-        .projects__item-link {
-          @include btnReset();
-          padding: 5px 12px;
-          font-weight: 600;
-          outline: none;
-          border: 1px solid $black;
-          border-radius: 5px;
-          transition: all 0.3s ease-in-out;
-          @media (hover: hover) {
-            &:hover {
-              background-color: $color2;
-            }
-          }
-          &:focus {
-            border: 1px dashed $black;
-          }
-          &:active {
-            background-color: $black;
-            color: $white;
-          }
+    }
+    &__item-img {
+      @include flexible();
+      width: 100%;
+      user-select: none;
+      -webkit-user-drag: none;
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
+      max-height: 270px;
+      object-fit: cover;
+      @media (hover: hover) {
+        &:hover {
+          transform: scale(1.2);
+          box-shadow: 5px 5px 50px black;
         }
       }
     }
-  }
+    &__item-content {
+      @include flexible();
+      flex-direction: column;
+      gap: 10px;
+      padding: 30px 25px;
+
+    }
+          &__item-h2 {
+        text-align: center;
+      }
+      &__item-stack {
+        color: $color1;
+      }
+      &__item-link {
+        @include btnReset();
+        padding: 5px 12px;
+        font-weight: 600;
+        outline: none;
+        border: 1px solid $black;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+        @media (hover: hover) {
+          &:hover {
+            background-color: $color2;
+          }
+        }
+        &:focus {
+          border: 1px dashed $black;
+        }
+        &:active {
+          background-color: $black;
+          color: $white;
+        }
+      }
+      &__img-container{
+      @include flexible();
+        height: 100%;
+    }
 }
 
 .modal-back {

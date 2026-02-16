@@ -104,15 +104,22 @@ const projects = [
 
 function createProjectCard(project) {
   return el("div.card-common.projects__item", [
-    el(`picture.projects__img-container`, [
-      el(
-        `img.projects__item-img${project.imgClass ? "." + project.imgClass : ""}`,
-        {
-          src: project.img,
-          alt: `Preview проекта ${project.title}`
-        }
-      )
-    ]),
+    el(
+      `a.projects__img-container`,
+      {
+        href: project.demoLink,
+        target: "_blank"
+      },
+      [
+        el(
+          `img.projects__item-img${project.imgClass ? "." + project.imgClass : ""}`,
+          {
+            src: project.img,
+            alt: `Preview проекта ${project.title}`
+          }
+        )
+      ]
+    ),
     el("div.projects__item-content", [
       el("h2.projects__item-h2", project.title),
       el("p.projects__item-stack", project.stack),

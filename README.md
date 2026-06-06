@@ -4,6 +4,10 @@
 [![Node.js](https://img.shields.io/badge/Node.js-16+-green)](https://nodejs.org/)
 [![npm](https://img.shields.io/badge/npm-8+-red)](https://www.npmjs.com/)
 
+
+## Деплой
+https://rampiv.github.io/portfolio/
+
 ## 🛠️ Технологический стек
 
 ### 🔧 Основные технологии

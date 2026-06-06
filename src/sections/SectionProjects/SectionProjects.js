@@ -8,10 +8,30 @@ import habitisPreview from "../../assets/habitisPreview.webp";
 import matovnikovaPreview from "../../assets/matovnikovaPreview.webp";
 import challengePreview from "../../assets/challengePreview.webp";
 import alexandrMeditationPreview from "../../assets/alexandrMeditationPreview.webp";
-import vexenHubPreview from "../../assets/vexenHubPreview.webp";
+import wwhubPreview from "../../assets/wwhubPreview.webp";
 import homeFarmacyPreview from "../../assets/homeFarmacyPreview.webp";
+import endfieltTournamentPreview from "../../assets/endfieltTournamentPreview.webp";
+import cbtDiaryPreview from "../../assets/cbtDiaryPreview.webp";
 
 const projects = [
+  {
+    title: "Дневник мыслей КПТ",
+    img: cbtDiaryPreview,
+    stack: "scss, ts, vite, react, firebase",
+    auth: "test@test.test : testtest",
+    demoLink: "https://cbt-diary-rampiv.vercel.app/",
+    githubLink: "https://github.com/Rampiv/cbtDiary",
+    imgClass: "projects__item-img_2"
+  },
+  {
+    title: "Endfield Tournament",
+    img: endfieltTournamentPreview,
+    stack: "scss, ts, vite, redux toolkit, firebase",
+    auth: "user@user.user : useruser",
+    demoLink: "https://endfield-smoky.vercel.app/",
+    githubLink: "https://github.com/Rampiv/Endfield",
+    imgClass: "projects__item-img_2"
+  },
   {
     title: "HomeFarmacy",
     img: homeFarmacyPreview,
@@ -21,10 +41,11 @@ const projects = [
     imgClass: "projects__item-img_2"
   },
   {
-    title: "VexenHub",
-    img: vexenHubPreview,
-    stack: "scss, ts, vite, react",
-    demoLink: "https://rampiv.github.io/VexenNexus/",
+    title: "Wuthering Waves guide",
+    img: wwhubPreview,
+    stack: "scss, ts, vite, react, firebase",
+    auth: "админ панель lock",
+    demoLink: "https://ww-hub.vercel.app/",
     githubLink: "https://github.com/Rampiv/VexenNexus",
     imgClass: "projects__item-img_2"
   },
@@ -32,6 +53,7 @@ const projects = [
     title: "TODO",
     img: challengePreview,
     stack: "scss, ts, vite, redux toolkit, firebase, ant design, chart.js",
+    auth: "test@test.test : testtest",
     demoLink: "https://rampiv.github.io/sportChallendge/",
     githubLink: "https://github.com/Rampiv/sportChallendge",
     imgClass: "projects__item-img_2"
@@ -123,11 +145,14 @@ function createProjectCard(project) {
     el("div.projects__item-content", [
       el("h2.projects__item-h2", project.title),
       el("p.projects__item-stack", project.stack),
+
       el("a.projects__item-link", project.demoBtnText || "Переход на сайт", {
         href: project.demoLink,
         target: project.demoLink !== "#" ? "_blank" : null,
         id: project.demoLink === "#" ? "pet2DemoBtn" : null
       }),
+      project.auth &&
+        el("p.projects__item-auth", `Авторизация: ${project.auth}`),
       el("a.projects__item-link", "GitHub", {
         href: project.githubLink,
         target: "_blank"
